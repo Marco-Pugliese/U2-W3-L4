@@ -16,6 +16,7 @@ const loadPrimary = () => {
       }
     })
     .then((loadedData) => {
+      myRow.innerHTML = ``;
       for (let i = 0; i < loadedData.photos.length; i++) {
         const newCard = document.createElement("div");
         newCard.innerHTML = `
@@ -31,7 +32,7 @@ const loadPrimary = () => {
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="./detail.html?photoId=${loadedData.photos[i].id}" class="btn btn-sm btn-outline-secondary">
+                <a href="./detail.html?photoId=${loadedData.photos[i].id}&query=${primary}" class="btn btn-sm btn-outline-secondary">
                   View
                 </a>
                 <button type="button" onclick=hideBtn(event) class="btn btn-sm btn-outline-secondary">
@@ -71,6 +72,7 @@ const loadSecondary = () => {
       }
     })
     .then((loadedData) => {
+      myRow.innerHTML = ``;
       for (let i = 0; i < loadedData.photos.length; i++) {
         const newCard = document.createElement("div");
         newCard.innerHTML = `
@@ -124,8 +126,10 @@ search = () => {
       }
     })
     .then((loadedData) => {
+      myRow.innerHTML = ``;
       for (let i = 0; i < loadedData.photos.length; i++) {
         const newCard = document.createElement("div");
+
         newCard.innerHTML = `
         <div id="newcol" class="col-12 col-md-10">
         <div class="card mb-4 shadow-sm d-flex flex-column">
@@ -139,7 +143,7 @@ search = () => {
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <a href="./detail.html?photoId=${loadedData.photos[i].id}$query=${inputValue}" class="btn btn-sm btn-outline-secondary">
+                <a href="./detail.html?photoId=${loadedData.photos[i].id}&query=${inputValue}" class="btn btn-sm btn-outline-secondary">
                   View
                 </a>
                 <button type="button" onclick=hideBtn(event) class="btn btn-sm btn-outline-secondary">

@@ -39,7 +39,7 @@ const generatePhotoPage = () => {
          </div>`;
           const myRow = document.getElementById("myRow");
           myRow.appendChild(newDiv);
-          newDiv.classList.add("col-6", "col-lg-4", "col-xxl-3");
+          newDiv.classList.add("col-8", "col-lg-6", "offset-2", "offset-lg-3");
         }
       }
     })
